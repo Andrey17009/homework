@@ -98,9 +98,10 @@ def main():
         a = input('Выберите что вы хотите сделать:\n1)Кодировать\n2)Декодировать\n$')
         if a == '1':
             txt = input("Введите текст для кодирования: ")
-            print(encode_to_morse(txt))
+            print("Вывод: " + encode_to_morse(txt))
         elif a == '2':
             txt = input("Введите текст для декодирования: ")
-            print(decode_from_morse(txt))
+            print("Вывод: " + decode_from_morse(txt))
         else:
             print('ПОЖАЛУЙСТА, введите "1" или "2": ')
+main()
