@@ -88,6 +88,13 @@ def decode_from_morse(code):
 
 
 def main():
-    enc = encode_to_morse("привет мир")
-    print(enc)
-    print(decode_from_morse(enc))
+    while True:
+        a = input('Выберите что вы хотите сделать:\n1)Кодировать\n2)Декодировать\n$')
+        if a == '1':
+            txt = input("Введите текст для кодирования: ")
+            encode_to_morse(txt)
+        elif a == '2':
+            txt = input("Введите текст для декодирования: ")
+            decode_from_morse(txt)
+        else:
+            print('ПОЖАЛУЙСТА, введите "1" или "2": ')
