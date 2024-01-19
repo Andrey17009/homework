@@ -73,18 +73,24 @@ alphabent_from = {
 
 
 def encode_to_morse(text):
-    out_text = ""
-    for a in text.upper():
-        out_text += " " + alphabent_to[a]
-    return out_text
+    try:
+        out_text = ""
+        for a in text.upper():
+            out_text += " " + alphabent_to[a]
+        return out_text
+    except Exception:
+        return "Извините произошла ошибка!"
 
 
 def decode_from_morse(code):
-    out_text = ""
-    code = code.split()
-    for a in code:
-        out_text += alphabent_from[a]
-    return out_text
+    try:
+        out_text = ""
+        code = code.split()
+        for a in code:
+            out_text += alphabent_from[a]
+        return out_text
+    except Exception:
+        return "Извините произошла ошибка!"
 
 
 def main():
@@ -92,9 +98,9 @@ def main():
         a = input('Выберите что вы хотите сделать:\n1)Кодировать\n2)Декодировать\n$')
         if a == '1':
             txt = input("Введите текст для кодирования: ")
-            encode_to_morse(txt)
+            print(encode_to_morse(txt))
         elif a == '2':
             txt = input("Введите текст для декодирования: ")
-            decode_from_morse(txt)
+            print(decode_from_morse(txt))
         else:
             print('ПОЖАЛУЙСТА, введите "1" или "2": ')
